@@ -35,13 +35,37 @@ def welcome():
             print("You selected 1")
             break
         elif menu_options == "2":
-            print("You selected 2")
+            rules()
             break
         elif menu_options == "3":
             print("You selected 3")
             break
         else:
-            print("Please only enter number 1, 2 or 3\n")        
+            print("Please only enter number 1, 2 or 3\n")
+
+def rules():
+    """
+    Displays rules of the game and requires user input to return
+    to welcome page.
+    """
+    print("""Rules:
+    1.	You have 6 lives to guess the word correctly before 
+    the man is hanged
+    2.	You will be awarded 10 points for each letter you 
+    guess correctly
+    3.	If you guess a letter incorrectly, the man's figure 
+    will begin appearing in the gallows and you will lose 5 points
+    4.	If you lose all of your lives, unfortunately that is 
+    the point where we will say 'Hangman'\n""")
+
+    while True:
+        return_home = input("Enter 0 to return: ").strip()
+        if return_home == "0":
+            welcome()
+            break
+        else:
+            print("Please only enter 0 to return home")
+
 
 def main():
     """
