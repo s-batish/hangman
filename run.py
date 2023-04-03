@@ -54,7 +54,7 @@ def input_name():
     Run a while loop to collect a valid input from user.
     """
     while True:
-        user_name = input("Please enter your name: ")
+        user_name = input("Please enter your name: ").capitalize()
         if len(user_name) == 0:
             print("You must enter a name to continue")
             continue
@@ -62,7 +62,7 @@ def input_name():
             print("Your name can only include letters")
             continue
         else:
-            print("Nice name")
+            print(f"Let's play Hangman {user_name}!")
             break
 
 
