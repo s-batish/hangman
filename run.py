@@ -1,3 +1,4 @@
+import random
 import gspread
 from google.oauth2.service_account import Credentials
 from words import words
@@ -34,7 +35,6 @@ def welcome():
     while True:
         menu_options = input("Select an option: ").strip()
         if menu_options == "1":
-            print("You selected 1")
             input_name()
             break
         elif menu_options == "2":
@@ -88,6 +88,23 @@ def rules():
             break
         else:
             print("Please only enter 0 to return home")
+
+
+def get_random_word():
+    """
+    Generates a random word to guess from the words list
+    """
+    word = random.choice(words)
+    return word.upper()
+
+
+def play_game():
+    """
+    Starts the main game.
+    User continues guessing letters until the word is guessed
+    or the man is hanged.
+    Input validity is checked for each user input.
+    """
 
 
 def main():
