@@ -2,6 +2,7 @@ import random
 import gspread
 from google.oauth2.service_account import Credentials
 from words import words
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -62,7 +63,9 @@ def input_name():
             print("Your name can only include letters")
             continue
         else:
+            os.system('clear')
             print(f"Let's play Hangman {user_name}!")
+            play_game()
             break
 
 
@@ -105,6 +108,8 @@ def play_game():
     or the man is hanged.
     Input validity is checked for each user input.
     """
+
+    print("The game will start here")
 
 
 def main():
