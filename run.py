@@ -31,6 +31,7 @@ def welcome():
     The loop will continue to run until user enters valid
     data.
     """
+    os.system("clear")
     print("Welcome to your game of Hangman!\n")
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
@@ -113,17 +114,21 @@ def play_game():
     Input validity is checked for each user input.
     """
     word = get_random_word()
-    word_to_guess = "-" * len(word)
     letters_in_word = set(word)  # set of the letters in random word
     guessed_letters = set()  # set of the letters guessed by user
     alphabet = set(string.ascii_uppercase)
 
     # User's letter guesses
-    print(word_to_guess)
+    print(f"This word has {len(word)} letters in it")
     while len(letters_in_word) > 0:
+        word_list = [
+            letter if letter in guessed_letters else "-" for letter in word
+        ]
+        print("Word: ", " ".join(word_list))
         print(
             "You've guessed the following letters: ", " ".join(guessed_letters)
         )
+
         guess = input("Guess a letter: ").upper()
         if guess in alphabet - guessed_letters:
             guessed_letters.add(guess)
