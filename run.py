@@ -65,7 +65,7 @@ def input_name():
             continue
         else:
             os.system('clear')
-            print(f"Let's play Hangman {user_name}!")
+            print(f"Let's play Hangman {user_name}!\n")
             play_game()
             break
 
@@ -110,22 +110,24 @@ def play_game():
     Input validity is checked for each user input.
     """
     word = get_random_word()
+    word_to_guess = "-" * len(word)
     letters_in_word = set(word)  # set of the letters in random word
     guessed_letters = set()  # set of the letters guessed by user
     alphabet = set(string.ascii_uppercase)
 
     # User's letter guesses
-    guess = input("Guess a letter: ").upper()
-    if guess in alphabet - guessed_letters:
-        guessed_letters.add(guess)
-        if guess in letters_in_word:
-            letters_in_word.remove(guess)
-    elif guess in guessed_letters:
-        print("You have already guessed that letter - try another letter")
-    else:
-        print("Invalid character - try again")
-
-    print("The game will start here")
+    print(word_to_guess)
+    while len(letters_in_word) > 0:
+        print("You have guessed the following letters: ", " ".join(guessed_letters))
+        guess = input("Guess a letter: ").upper()
+        if guess in alphabet - guessed_letters:
+            guessed_letters.add(guess)
+            if guess in letters_in_word:
+                letters_in_word.remove(guess)
+        elif guess in guessed_letters:
+            print("You have already guessed that letter - try another letter")
+        else:
+            print("Invalid character - try again")
 
 
 def main():
