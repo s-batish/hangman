@@ -1,9 +1,12 @@
+"""
+Main Hangman game file
+"""
 import random
+import os
+import string
 import gspread
 from google.oauth2.service_account import Credentials
 from words import words
-import os
-import string
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -118,7 +121,9 @@ def play_game():
     # User's letter guesses
     print(word_to_guess)
     while len(letters_in_word) > 0:
-        print("You have guessed the following letters: ", " ".join(guessed_letters))
+        print(
+            "You've guessed the following letters: ", " ".join(guessed_letters)
+        )
         guess = input("Guess a letter: ").upper()
         if guess in alphabet - guessed_letters:
             guessed_letters.add(guess)
