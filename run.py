@@ -15,6 +15,7 @@ SHEET = GSPREAD_CLIENT.open('hangman _leaderboard')
 
 scores = SHEET.worksheet('Sheet1').get_all_values()
 
+
 def welcome():
     """
     Prints welcome message and gives user 3 options:
@@ -34,7 +35,7 @@ def welcome():
         menu_options = input("Select an option: ").strip()
         if menu_options == "1":
             print("You selected 1")
-            print(words)
+            input_name()
             break
         elif menu_options == "2":
             rules()
@@ -44,6 +45,26 @@ def welcome():
             break
         else:
             print("Please only enter number 1, 2 or 3\n")
+
+
+def input_name():
+    """
+    Asks user to input their name.
+    Throws an error message for an invalid input.
+    Run a while loop to collect a valid input from user.
+    """
+    while True:
+        user_name = input("Please enter your name: ")
+        if len(user_name) == 0:
+            print("You must enter a name to continue")
+            continue
+        elif not user_name.isalpha():
+            print("Your name can only include letters")
+            continue
+        else:
+            print("Nice name")
+            break
+
 
 def rules():
     """
@@ -74,5 +95,6 @@ def main():
     Runs all programme functions
     """
     welcome()
+
 
 main()
