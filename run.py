@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from words import words
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -33,6 +34,7 @@ def welcome():
         menu_options = input("Select an option: ").strip()
         if menu_options == "1":
             print("You selected 1")
+            print(words)
             break
         elif menu_options == "2":
             rules()
@@ -49,13 +51,13 @@ def rules():
     to welcome page.
     """
     print("""Rules:
-    1.	You have 6 lives to guess the word correctly before 
+    1.	You have 6 lives to guess the word correctly before
     the man is hanged
-    2.	You will be awarded 10 points for each letter you 
+    2.	You will be awarded 10 points for each letter you
     guess correctly
-    3.	If you guess a letter incorrectly, the man's figure 
+    3.	If you guess a letter incorrectly, the man's figure
     will begin appearing in the gallows and you will lose 5 points
-    4.	If you lose all of your lives, unfortunately that is 
+    4.	If you lose all of your lives, unfortunately that is
     the point where we will say 'Hangman'\n""")
 
     while True:
