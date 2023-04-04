@@ -21,6 +21,9 @@ SHEET = GSPREAD_CLIENT.open('hangman _leaderboard')
 
 scores = SHEET.worksheet('Sheet1').get_all_values()
 
+# CONSTANTS
+USER_NAME = ""
+
 
 def welcome():
     """
@@ -59,17 +62,18 @@ def input_name():
     Throws an error message for an invalid input.
     Run a while loop to collect a valid input from user.
     """
+    global USER_NAME
     while True:
-        user_name = input("Please enter your name: ").capitalize()
-        if len(user_name) == 0:
+        USER_NAME = input("Please enter your name: ").capitalize()
+        if len(USER_NAME) == 0:
             print("You must enter a name to continue")
             continue
-        elif not user_name.isalpha():
+        elif not USER_NAME.isalpha():
             print("Your name can only include letters")
             continue
         else:
             os.system('clear')
-            print(f"Let's play Hangman {user_name}!\n")
+            print(f"Let's play Hangman {USER_NAME}!\n")
             play_game()
             break
 
@@ -149,7 +153,8 @@ def play_game():
     if lives == 0:
         print("Oh no, you're out of lives - it is time to hang the man!")
     else:
-        print(f"Well done for guessing the word {word} correctly!")
+        print(f"Well done {USER_NAME} for guessing the word {word} correctly!")
+
 
 def main():
     """
