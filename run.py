@@ -81,13 +81,14 @@ def rules():
     """
     print("""Rules:
     1.	You have 6 lives to guess the word correctly before
-    the man is hanged
+    the man is hanged.
     2.	You will be awarded 10 points for each letter you
-    guess correctly
+    guess correctly.
     3.	If you guess a letter incorrectly, the man's figure
-    will begin appearing in the gallows and you will lose 5 points
+    will begin appearing in the gallows and you will lose 5 points.
     4.	If you lose all of your lives, unfortunately that is
-    the point where we will say 'Hangman'\n""")
+    the point where we will say 'Hangman'.
+    Good luck anf enjoy!\n""")
 
     while True:
         return_home = input("Enter 0 to return: ").strip()
@@ -119,6 +120,7 @@ def play_game():
     alphabet = set(string.ascii_uppercase)
 
     # User's letter guesses
+    # Code adapted from https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s
     print(f"This word has {len(word)} letters in it")
     while len(letters_in_word) > 0:
         word_list = [
