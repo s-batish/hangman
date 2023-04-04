@@ -122,6 +122,7 @@ def play_game():
     word = get_random_word()
     letters_in_word = set(word)  # set of the letters in random word
     guessed_letters = set()  # set of the letters guessed by user
+    guessed_words = set()  # set of the words guessed by user
     alphabet = set(string.ascii_uppercase)
 
     # User's letter guesses
@@ -146,6 +147,15 @@ def play_game():
             else:
                 lives -= 1
                 print(f"{guess} is not in the word\n")
+        elif len(guess) == len(word) and guess.isalpha():
+            if guess in guessed_words:
+                print(f"You've already guessed the word {guess}")
+            elif guess != word:
+                print(f"{guess} is not the correct word")
+                lives -= 1
+                guessed_words.add(guess)
+            else:
+                break
         elif guess in guessed_letters:
             print("You have already guessed that letter - try another letter")
         else:
