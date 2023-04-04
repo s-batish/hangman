@@ -142,9 +142,10 @@ def play_game():
             guessed_letters.add(guess)
             if guess in letters_in_word:
                 letters_in_word.remove(guess)
+                print(f"Good guess {USER_NAME}, {guess} is in the word\n")
             else:
                 lives -= 1
-                print(f"{guess} is not in the word")
+                print(f"{guess} is not in the word\n")
         elif guess in guessed_letters:
             print("You have already guessed that letter - try another letter")
         else:
