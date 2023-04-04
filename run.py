@@ -92,7 +92,7 @@ def rules():
     will begin appearing in the gallows and you will lose 5 points.
     4.	If you lose all of your lives, unfortunately that is
     the point where we will say 'Hangman'.
-    Good luck anf enjoy!\n""")
+    Good luck and enjoy!\n""")
 
     while True:
         return_home = input("Enter 0 to return: ").strip()
@@ -137,7 +137,7 @@ def play_game():
             "You've guessed the following letters: ", " ".join(guessed_letters)
         )
 
-        guess = input("Guess a letter: ").upper()
+        guess = input("Guess a letter: ").upper().strip()
         if guess in alphabet - guessed_letters:
             guessed_letters.add(guess)
             if guess in letters_in_word:
