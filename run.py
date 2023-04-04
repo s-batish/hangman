@@ -156,6 +156,11 @@ def play_game():
                 guessed_words.add(guess)
             else:
                 break
+        elif len(guess) > 1 and guess.isalpha():
+            print(
+                f"You must enter a letter or a word of {len(word)} "
+                "letters - try again"
+            )
         elif guess in guessed_letters:
             print("You have already guessed that letter - try another letter")
         else:
