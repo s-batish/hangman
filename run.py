@@ -114,6 +114,7 @@ def play_game():
     or the man is hanged.
     Input validity is checked for each user input.
     """
+    lives = 6
     word = get_random_word()
     letters_in_word = set(word)  # set of the letters in random word
     guessed_letters = set()  # set of the letters guessed by user
@@ -122,11 +123,12 @@ def play_game():
     # User's letter guesses
     # Code adapted from https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s
     print(f"This word has {len(word)} letters in it")
-    while len(letters_in_word) > 0:
+    while len(letters_in_word) > 0 and lives > 0:
         word_list = [
             letter if letter in guessed_letters else "-" for letter in word
         ]
         print("Word: ", " ".join(word_list))
+        print(f"You have {lives} lives left")
         print(
             "You've guessed the following letters: ", " ".join(guessed_letters)
         )
@@ -136,11 +138,18 @@ def play_game():
             guessed_letters.add(guess)
             if guess in letters_in_word:
                 letters_in_word.remove(guess)
+            else:
+                lives -= 1
+                print(f"{guess} is not in the word")
         elif guess in guessed_letters:
             print("You have already guessed that letter - try another letter")
         else:
             print("Invalid character - try again")
 
+    if lives == 0:
+        print("Oh no, you're out of lives - it is time to hang the man!")
+    else:
+        print(f"Well done for guessing the word {word} correctly!")
 
 def main():
     """
