@@ -148,7 +148,7 @@ def play_game():
                 print(f"Good guess {USER_NAME}, {guess} is in the word")
             else:
                 lives -= 1
-                print(f"{guess} is not in the word\n")
+                print(f"{guess} is not in the word")
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(f"You've already guessed the word {guess}")
@@ -164,10 +164,10 @@ def play_game():
                 "letters - try again\n"
             )
         elif guess in guessed_letters:
-            print("You have already guessed that letter - "
-                  "try another letter\n")
+            print("You've already guessed that letter - "
+                  "try another letter")
         else:
-            print("Invalid character - try again\n")
+            print("Invalid character - try again")
         print(display_hangman(lives))
 
     if lives == 0:
