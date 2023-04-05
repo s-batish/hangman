@@ -74,7 +74,7 @@ def input_name():
             continue
         else:
             os.system('clear')
-            print(f"Let's play Hangman {USER_NAME}!\n")
+            print(f"Let's play Hangman {USER_NAME}!")
             play_game()
             break
 
@@ -125,6 +125,7 @@ def play_game():
     guessed_letters = set()  # set of the letters guessed by user
     guessed_words = set()  # set of the words guessed by user
     alphabet = set(string.ascii_uppercase)
+    print(display_hangman(lives))
 
     # User's letter guesses
     # Code adapted from https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s
@@ -144,7 +145,7 @@ def play_game():
             guessed_letters.add(guess)
             if guess in letters_in_word:
                 letters_in_word.remove(guess)
-                print(f"Good guess {USER_NAME}, {guess} is in the word\n")
+                print(f"Good guess {USER_NAME}, {guess} is in the word")
             else:
                 lives -= 1
                 print(f"{guess} is not in the word\n")
