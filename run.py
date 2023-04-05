@@ -7,6 +7,7 @@ import string
 import gspread
 from google.oauth2.service_account import Credentials
 from words import words
+from hangman_lives import stages
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -166,11 +167,19 @@ def play_game():
                   "try another letter\n")
         else:
             print("Invalid character - try again\n")
+        print(display_hangman(lives))
 
     if lives == 0:
         print("Oh no, you're out of lives - it is time to hang the man!")
     else:
         print(f"Well done {USER_NAME} for guessing the word {word} correctly!")
+
+
+def display_hangman(lives):
+    """
+    Show hangman stages which adjust as user loses lives.
+    """
+    return stages[lives]
 
 
 def main():
