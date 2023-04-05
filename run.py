@@ -167,7 +167,7 @@ def play_game():
             print("You've already guessed that letter - "
                   "try another letter")
         else:
-            print("Invalid character - try again")
+            print("Invalid character - try again\n")
         print(display_hangman(lives))
 
     if lives == 0:
