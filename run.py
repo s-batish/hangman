@@ -172,8 +172,10 @@ def play_game():
 
     if lives == 0:
         print("Oh no, you're out of lives - it is time to hang the man!")
+        end_choices()
     else:
         print(f"Well done {USER_NAME} for guessing the word {word} correctly!")
+        end_choices()
 
 
 def display_hangman(lives):
@@ -195,6 +197,20 @@ def end_choices():
     1 - Play again
     2 - View the high scores
     3 - Return home\n""")
+    while True:
+        end_choice = input("Select an option: ").strip()
+        if end_choice == "1":
+            os.system('clear')
+            play_game()
+            break
+        elif end_choice == "2":
+            print("Go to high scores")
+            break
+        elif end_choice == "3":
+            welcome()
+            break
+        else:
+            print("Please only enter number 1, 2 or 3\n")
 
 
 def main():
@@ -202,7 +218,6 @@ def main():
     Runs all programme functions.
     """
     welcome()
-    end_choices()
 
 
 main()
