@@ -183,9 +183,24 @@ def display_hangman(lives):
     return stages[lives]
 
 
+def end_choices():
+    """
+    At the end of the game, presents user with options
+    to play again, view the high scores or to return
+    to the home page
+    """
+    os.system('clear')
+    print("This game of Hangman is over - "
+          "what would you like to do now?")
+    print("""Select an option below (1, 2 or 3) to continue:
+    1 - Play again
+    2 - View the high scores
+    3 - Return home\n""")
+
+
 def main():
     """
-    Runs all programme functions
+    Runs all programme functions.
     """
     welcome()
 
