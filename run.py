@@ -120,6 +120,9 @@ def play_game():
     Input validity is checked for each user input.
     """
     lives = 6
+    score = 0
+    correct = 10
+    incorrect = 5
     word = get_random_word()
     letters_in_word = set(word)  # set of the letters in random word
     guessed_letters = set()  # set of the letters guessed by user
@@ -134,6 +137,7 @@ def play_game():
         word_list = [
             letter if letter in guessed_letters else "-" for letter in word
         ]
+        print(f"You have {score} points")
         print("Word: ", " ".join(word_list))
         print(f"You have {lives} lives left")
         print(
@@ -146,9 +150,11 @@ def play_game():
             if guess in letters_in_word:
                 letters_in_word.remove(guess)
                 print(f"Good guess {USER_NAME}, {guess} is in the word")
+                score += correct
             else:
                 lives -= 1
                 print(f"{guess} is not in the word")
+                score -= incorrect
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(f"You've already guessed the word {guess}")
@@ -172,9 +178,11 @@ def play_game():
 
     if lives == 0:
         print("Oh no, you're out of lives - it is time to hang the man!")
+        print(f"Your final score is: {score} - better luck next time")
         end_choices()
     else:
         print(f"Well done {USER_NAME} for guessing the word {word} correctly!")
+        print(f"Your final score is: {score} - good job")
         end_choices()
 
 
