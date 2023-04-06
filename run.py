@@ -241,6 +241,14 @@ def update_scoresheet(USER_NAME, score):
     scores_worksheet.append_row([str(USER_NAME), score])
 
 
+def display_scoresheet():
+    """
+    Displays the top 10 scores
+    """
+    scores = SHEET.worksheet('scoresheet').get_all_values()[1:]
+    print(scores)
+
+
 def main():
     """
     Runs all programme functions.
@@ -248,4 +256,5 @@ def main():
     welcome()
 
 
-main()
+# main()
+display_scoresheet()
