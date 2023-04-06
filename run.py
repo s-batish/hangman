@@ -85,14 +85,19 @@ def rules():
     to welcome page.
     """
     print("""Rules:
-    1.	You have 6 lives to guess the word correctly before
-    the man is hanged.
-    2.	You will be awarded 10 points for each letter you
-    guess correctly.
-    3.	If you guess a letter incorrectly, the man's figure
+    1.	You have 6 lives to guess the word correctly before the man
+    is hanged.
+    2.	You will be awarded 10 points for each letter you guess
+    correctly.
+    3.	If you guess a letter or word incorrectly, the man's figure
     will begin appearing in the gallows and you will lose 5 points.
-    4.	If you lose all of your lives, unfortunately that is
-    the point where we will say 'Hangman'.
+    4.	If you lose all of your lives, unfortunately that is the point
+    where we will say 'Hangman'.
+    *BONUS POINTS*
+    -   If you guess the whole word correctly, you will be awarded
+    a 100 point bonus.
+    -   However, if you guess the word incorrectly, you will lose 50
+    points.
     Good luck and enjoy!\n""")
 
     while True:
@@ -161,8 +166,10 @@ def play_game():
             elif guess != word:
                 print(f"{guess} is not the correct word")
                 lives -= 1
+                score -= 50
                 guessed_words.add(guess)
             else:
+                score += 100
                 break
         elif len(guess) > 1 and guess.isalpha():
             print(
