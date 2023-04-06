@@ -20,7 +20,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman _leaderboard')
 
-scores = SHEET.worksheet('Sheet1').get_all_values()
+scores = SHEET.worksheet('scoresheet').get_all_values()
 
 # CONSTANTS
 USER_NAME = ""
@@ -227,6 +227,13 @@ def end_choices():
             break
         else:
             print("Please only enter number 1, 2 or 3\n")
+
+
+def update_scoresheet():
+    """
+    Updates scoresheet by adding a new row with the user's name and score
+    """
+    
 
 
 def main():
