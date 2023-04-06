@@ -256,5 +256,4 @@ def main():
     welcome()
 
 
-# main()
-display_scoresheet()
+main()
