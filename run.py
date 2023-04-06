@@ -20,7 +20,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman _leaderboard')
 
-scores = SHEET.worksheet('scoresheet').get_all_values()
+data = SHEET.worksheet('scoresheet').get_all_values()
 
 # CONSTANTS
 USER_NAME = ""
@@ -187,10 +187,13 @@ def play_game():
     if lives == 0:
         print("Oh no, you're out of lives - it is time to hang the man!")
         print(f"Your final score is: {score} - better luck next time")
+        update_scoresheet(USER_NAME, score)
         end_choices()
+
     else:
         print(f"Well done {USER_NAME} for guessing the word {word} correctly!")
         print(f"Your final score is: {score} - good job")
+        update_scoresheet(USER_NAME, score)
         end_choices()
 
 
@@ -229,11 +232,13 @@ def end_choices():
             print("Please only enter number 1, 2 or 3\n")
 
 
-def update_scoresheet():
+def update_scoresheet(USER_NAME, score):
     """
     Updates scoresheet by adding a new row with the user's name and score
     """
-    
+    print("Updating high score leaderboard...\n")
+    scores_worksheet = SHEET.worksheet('scoresheet')
+    scores_worksheet.append_row([str(USER_NAME), score])
 
 
 def main():
