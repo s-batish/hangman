@@ -93,6 +93,7 @@ def rules():
     will begin appearing in the gallows and you will lose 5 points.
     4.	If you lose all of your lives, unfortunately that is the point
     where we will say 'Hangman'.
+
     *BONUS POINTS*
     -   If you guess the whole word correctly, you will be awarded
     a 100 point bonus.
