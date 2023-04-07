@@ -182,7 +182,7 @@ def play_game():
             print("You've already guessed that letter - "
                   "try another letter")
         else:
-            print("Invalid character - try again\n")
+            print("Invalid character - try again")
         print(display_hangman(lives))
 
     if lives == 0:
@@ -192,7 +192,8 @@ def play_game():
         end_choices()
 
     else:
-        print(f"\nWell done {USER_NAME} for guessing the word {word} correctly!")
+        print(f"\nWell done {USER_NAME} for guessing the word {word}"
+              "correctly!")
         print(f"Your final score is: {score} - good job")
         update_scoresheet(USER_NAME, score)
         end_choices()
