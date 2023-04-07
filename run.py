@@ -255,6 +255,7 @@ def display_scoresheet():
     # Code from Stack Overflow
     sorted_scores = sorted(scores, key=lambda x: x[1], reverse=True)
 
+    os.system('clear')
     print("High Scores:")
     print("Position\t Name\t\t Score")
 
@@ -276,32 +277,19 @@ def display_scoresheet():
 
 def scoresheet_options():
     """
-    Provides the user with options to play again or return home
+    Provides the user with options to play again or return home.
+    Includes a while loop that checks whether the player has
+    played already or is a new player.
     """
-    # print("""\nSelect an option below (1 or 2) to continue:
-    # 1 - Play Hangman
-    # 2 - Return home\n""")
-    # while True:
-    #     scoresheet_choice = input("Select an option: ").strip()
-    #     if scoresheet_choice == "1":
-    #         os.system('clear')
-    #         play_game()
-    #         break
-    #     elif scoresheet_choice == "2":
-    #         os.system('clear')
-    #         welcome()
-    #         break
-    #     else:
-    #         print("Please only enter number 1 or 2\n")
     while True:
         if not USER_NAME:
             while True:
-                return_home = input("Enter 0 to return: ").strip()
+                return_home = input("\nEnter 0 to return: ").strip()
                 if return_home == "0":
                     welcome()
                     break
                 else:
-                    print("Please only enter 0 to return home")
+                    print("\nPlease only enter 0 to return home")
         else:
             print("""\nSelect an option below (1 or 2) to continue:
                 1 - Play again
