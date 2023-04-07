@@ -51,7 +51,7 @@ def welcome():
             rules()
             break
         elif menu_options == "3":
-            print("You selected 3")
+            display_scoresheet()
             break
         else:
             print("Please only enter number 1, 2 or 3\n")
@@ -223,7 +223,8 @@ def end_choices():
             play_game()
             break
         elif end_choice == "2":
-            print("Go to high scores")
+            os.system('clear')
+            display_scoresheet()
             break
         elif end_choice == "3":
             welcome()
@@ -254,7 +255,7 @@ def display_scoresheet():
     # Code from Stack Overflow
     sorted_scores = sorted(scores, key=lambda x: x[1], reverse=True)
 
-    print("Top 10 scores:")
+    print("High Scores:")
     print("Position\t Name\t\t Score")
 
     # Creates the maximum range for the scoreboard
@@ -262,7 +263,7 @@ def display_scoresheet():
         max_range = len(sorted_scores)
     else:
         max_range = 10
- 
+
     # Aligns the Names and Scores into evenly spaced columns depending on
     # the length of the user's name
     for i in range(0, max_range):
@@ -270,6 +271,53 @@ def display_scoresheet():
             print(f"{i+1}\t\t {sorted_scores[i][0]}\t\t {sorted_scores[i][1]}")
         else:
             print(f"{i+1}\t\t {sorted_scores[i][0]}\t {sorted_scores[i][1]}")
+    scoresheet_options()
+
+
+def scoresheet_options():
+    """
+    Provides the user with options to play again or return home
+    """
+    # print("""\nSelect an option below (1 or 2) to continue:
+    # 1 - Play Hangman
+    # 2 - Return home\n""")
+    # while True:
+    #     scoresheet_choice = input("Select an option: ").strip()
+    #     if scoresheet_choice == "1":
+    #         os.system('clear')
+    #         play_game()
+    #         break
+    #     elif scoresheet_choice == "2":
+    #         os.system('clear')
+    #         welcome()
+    #         break
+    #     else:
+    #         print("Please only enter number 1 or 2\n")
+    while True:
+        if not USER_NAME:
+            while True:
+                return_home = input("Enter 0 to return: ").strip()
+                if return_home == "0":
+                    welcome()
+                    break
+                else:
+                    print("Please only enter 0 to return home")
+        else:
+            print("""\nSelect an option below (1 or 2) to continue:
+                1 - Play again
+                2 - Return home\n""")
+            while True:
+                scoresheet_choice = input("Select an option: ").strip()
+                if scoresheet_choice == "1":
+                    os.system('clear')
+                    play_game()
+                    break
+                elif scoresheet_choice == "2":
+                    os.system('clear')
+                    welcome()
+                    break
+                else:
+                    print("Please only enter number 1 or 2\n")
 
 
 def main():
@@ -279,6 +327,4 @@ def main():
     welcome()
 
 
-# main()
-
-display_scoresheet()
+main()
