@@ -246,7 +246,16 @@ def display_scoresheet():
     Displays the top 10 scores
     """
     scores = SHEET.worksheet('scoresheet').get_all_values()[1:]
-    print(scores)
+    for data in scores:
+        data[1] = int(data[1])
+
+    # Code from Stack Overflow
+    sorted_scores = sorted(scores, key=lambda x: x[1], reverse=True)
+
+    print("Top 10 scores:")
+    print("Position\t Name\t Score")
+    for line in range(10):
+        print(str(line+1) + "\t" + str(sorted_scores[line]))
 
 
 def main():
@@ -256,4 +265,6 @@ def main():
     welcome()
 
 
-main()
+# main()
+
+display_scoresheet()
