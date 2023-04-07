@@ -139,19 +139,18 @@ def play_game():
 
     # User's letter guesses
     # Code adapted from https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s
-    print(f"This word has {len(word)} letters in it")
     while len(letters_in_word) > 0 and lives > 0:
         word_list = [
             letter if letter in guessed_letters else "-" for letter in word
         ]
-        print(f"You have {score} points")
+        print(f"You have {score} points and {lives} lives left")
         print("Word: ", " ".join(word_list))
-        print(f"You have {lives} lives left")
         print(
             "You've guessed the following letters: ", " ".join(guessed_letters)
         )
 
-        guess = input("Guess a letter: ").upper().strip()
+        guess = input(f"Guess a letter or a word of {len(word)}"
+                      " letters: ").upper().strip()
         if guess in alphabet - guessed_letters:
             guessed_letters.add(guess)
             if guess in letters_in_word:
@@ -186,14 +185,15 @@ def play_game():
         print(display_hangman(lives))
 
     if lives == 0:
-        print("\nOh no, you're out of lives - it is time to hang the man!")
+        print(f"\nOh no {USER_NAME}, you're out of lives - it is time to"
+              " hang the man!")
         print(f"Your final score is: {score} - better luck next time")
         update_scoresheet(USER_NAME, score)
         end_choices()
 
     else:
         print(f"\nWell done {USER_NAME} for guessing the word {word}"
-              "correctly!")
+              " correctly!")
         print(f"Your final score is: {score} - good job")
         update_scoresheet(USER_NAME, score)
         end_choices()
