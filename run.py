@@ -185,13 +185,13 @@ def play_game():
         print(display_hangman(lives))
 
     if lives == 0:
-        print("Oh no, you're out of lives - it is time to hang the man!")
+        print("\nOh no, you're out of lives - it is time to hang the man!")
         print(f"Your final score is: {score} - better luck next time")
         update_scoresheet(USER_NAME, score)
         end_choices()
 
     else:
-        print(f"Well done {USER_NAME} for guessing the word {word} correctly!")
+        print(f"\nWell done {USER_NAME} for guessing the word {word} correctly!")
         print(f"Your final score is: {score} - good job")
         update_scoresheet(USER_NAME, score)
         end_choices()
@@ -237,7 +237,6 @@ def update_scoresheet(USER_NAME, score):
     """
     Updates scoresheet by adding a new row with the user's name and score
     """
-    print("Updating high score leaderboard...\n")
     scores_worksheet = SHEET.worksheet('scoresheet')
     scores_worksheet.append_row([str(USER_NAME), score])
 
