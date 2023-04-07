@@ -84,6 +84,7 @@ def rules():
     Displays rules of the game and requires user input to return
     to welcome page.
     """
+    os.system('clear')
     print("""Rules:
     1.	You have 6 lives to guess the word correctly before the man
     is hanged.
