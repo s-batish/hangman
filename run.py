@@ -243,7 +243,9 @@ def update_scoresheet(USER_NAME, score):
 
 def display_scoresheet():
     """
-    Displays the top 10 scores
+    Displays the top 10 scores.
+    Converts the score from a string into an integer.
+    Sorts the code in numerically descending order.
     """
     scores = SHEET.worksheet('scoresheet').get_all_values()[1:]
     for data in scores:
@@ -253,13 +255,21 @@ def display_scoresheet():
     sorted_scores = sorted(scores, key=lambda x: x[1], reverse=True)
 
     print("Top 10 scores:")
-    print("Position\t Name\t Score")
+    print("Position\t Name\t\t Score")
+
+    # Creates the maximum range for the scoreboard
     if len(sorted_scores) < 10:
-        max_position = len(sorted_scores)
+        max_range = len(sorted_scores)
     else:
-        max_position = 10
-    for i in range(0, max_position):
-        print(f"{i+1}\t\t {sorted_scores[i][0]}\t\t {sorted_scores[i][1]}")
+        max_range = 10
+ 
+    # Aligns the Names and Scores into evenly spaced columns depending on
+    # the length of the user's name
+    for i in range(0, max_range):
+        if len(sorted_scores[i][0]) < 7:
+            print(f"{i+1}\t\t {sorted_scores[i][0]}\t\t {sorted_scores[i][1]}")
+        else:
+            print(f"{i+1}\t\t {sorted_scores[i][0]}\t {sorted_scores[i][1]}")
 
 
 def main():
