@@ -254,8 +254,12 @@ def display_scoresheet():
 
     print("Top 10 scores:")
     print("Position\t Name\t Score")
-    for line in range(10):
-        print(str(line+1) + "\t" + str(sorted_scores[line]))
+    if len(sorted_scores) < 10:
+        max_position = len(sorted_scores)
+    else:
+        max_position = 10
+    for i in range(0, max_position):
+        print(f"{i+1}\t\t {sorted_scores[i][0]}\t\t {sorted_scores[i][1]}")
 
 
 def main():
