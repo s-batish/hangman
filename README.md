@@ -26,6 +26,22 @@ I made the following flowchart to show the logic of the game from the start to t
 ## Solved Bugs
 ## Deployment
 ### Deploying the Project
+- This game was deployed to Heroku. The steps to do this are as follows:
+    - Create an account with [Heroku](https://id.heroku.com/login).
+    - On the Heroku dashboard, click the button that says "New", then click "Create new app".
+    - Choose a unique name for the app.
+    - Select your region, then click "Create app".
+    -  Click on the "Settings" button on the menu.
+    - Scroll down to the section "Config Vars" and click "Reveal Config Vars".
+    - Enter CREDS in the field for key and copy and paste the creds.json file into the field for value and then click "Add".
+    - Add another Config Var with the key Port and the value 8000.
+    - Scroll down to the "Buildpacks" section and click "Add buildpack".
+    - Select "python" and then "Save changes".
+    - Then click "Add buildpack" again and select "node.js" and "Save changes".
+    - Go to the "Deploy" button on the menu at the top.
+    - Select GitHub as the deployment method and click the "Connect to GitHub" button.
+    - Search for the repository "hangman" and then click "Connect".
+    - Scroll to the bottom of the page and either click "Enable Automatic Deploys" in the Automatic deploys section or "Deploy branch" in the Manual deploy section.
 ### Forking the Project
 ### Cloning the Project
 ## Credits
