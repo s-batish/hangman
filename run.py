@@ -121,6 +121,8 @@ def play_game():
     Starts the main game.
     User continues guessing letters until the word is guessed
     or the man is hanged.
+    Correct letter or word increments the score and incorrect
+    guesses decrement the score and number of lives.
     Input validity is checked for each user input.
     """
     lives = 6
@@ -146,8 +148,12 @@ def play_game():
             "You've guessed the following letters: ", " ".join(guessed_letters)
         )
 
+        # User input to guess a letter.
+        # Correct letter is added to guessed_letters set and correct
+        # word is added to guessed_words set
         guess = input(f"Guess a letter or a word of {len(word)}"
                       " letters: ").upper().strip()
+        # Condition if user guesses a letter in the alphabet.
         if guess in alphabet - guessed_letters:
             guessed_letters.add(guess)
             if guess in letters_in_word:
@@ -161,6 +167,7 @@ def play_game():
                 lives -= 1
                 print(Fore.YELLOW + f"{guess} is not in the word")
                 score -= incorrect
+        # Conditions if user guesses a word with the correct number of letters.
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(Fore.RED + f"You've already guessed the word {guess}")
@@ -172,11 +179,14 @@ def play_game():
             else:
                 score += 100
                 break
+        # Condition if user guesses a word that is not correct number of
+        # letters.
         elif len(guess) > 1 and guess.isalpha():
             print(
                 Fore.RED + f"You must enter a letter or a word of {len(word)} "
                 "letters - try again"
             )
+        # Condition if user guesses a letter they have already guessed.
         elif guess in guessed_letters:
             print(Fore.RED + "You've already guessed that letter - "
                   "try another letter")
@@ -184,6 +194,10 @@ def play_game():
             print(Fore.RED + "Invalid character - try again")
         print(display_hangman(lives))
 
+    # Displays end message to user depending on whethere they guess the word
+    # correctly or not.
+    # Displays the end_choices() function to show the end of game options to
+    # the user
     if lives == 0:
         print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives -"
               " it is time to hang the man!")
@@ -202,7 +216,8 @@ def play_game():
 
 def display_hangman(lives):
     """
-    Show hangman stages which adjust as user loses lives.
+    Shows hangman stages from hangman_lives.py which adjust as
+    user loses lives.
     """
     return stages[lives]
 
