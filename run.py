@@ -8,7 +8,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, init
 from words import words
-from hangman_lives import stages
+from hangman_lives import stages, logo
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -39,7 +39,7 @@ def welcome():
     """
     os.system("clear")
     print("Welcome to your game of Countries Hangman!")
-    print(stages[0])
+    print(logo[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
     2 - Read the rules
