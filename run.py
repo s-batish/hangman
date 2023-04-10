@@ -6,7 +6,6 @@ import os
 import string
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import Fore, init
 from words import words
 from hangman_lives import stages
 
@@ -22,9 +21,6 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman _leaderboard')
 
 data = SHEET.worksheet('scoresheet').get_all_values()
-
-# Resets colorama colours
-init(autoreset=True)
 
 # CONSTANTS
 USER_NAME = ""
@@ -59,7 +55,7 @@ def welcome():
             display_scoresheet()
             break
         else:
-            print(Fore.RED + "Please only enter number 1, 2 or 3\n")
+            print("Please only enter number 1, 2 or 3\n")
 
 
 def input_name():
@@ -72,10 +68,10 @@ def input_name():
     while True:
         USER_NAME = input("Please enter your name: ").capitalize()
         if len(USER_NAME) == 0:
-            print(Fore.RED + "You must enter a name to continue")
+            print("You must enter a name to continue")
             continue
         elif not USER_NAME.isalpha():
-            print(Fore.RED + "Your name can only include letters")
+            print("Your name can only include letters")
             continue
         else:
             os.system('clear')
@@ -113,7 +109,7 @@ def rules():
             welcome()
             break
         else:
-            print(Fore.RED + "Please only enter 0 to return home")
+            print("Please only enter 0 to return home")
 
 
 def get_random_word():
@@ -161,19 +157,19 @@ def play_game():
             if guess in letters_in_word:
                 letters_in_word.remove(guess)
                 print(
-                    Fore.GREEN + f"Good guess {USER_NAME}, {guess} is in the"
+                    f"Good guess {USER_NAME}, {guess} is in the"
                     " word"
                 )
                 score += correct
             else:
                 lives -= 1
-                print(Fore.MAGENTA + f"{guess} is not in the word")
+                print(f"{guess} is not in the word")
                 score -= incorrect
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                print(Fore.RED + f"You've already guessed the word {guess}")
+                print(f"You've already guessed the word {guess}")
             elif guess != word:
-                print(Fore.MAGENTA + f"{guess} is not the correct word")
+                print(f"{guess} is not the correct word")
                 lives -= 1
                 score -= 50
                 guessed_words.add(guess)
@@ -182,28 +178,28 @@ def play_game():
                 break
         elif len(guess) > 1 and guess.isalpha():
             print(
-                Fore.RED + f"You must enter a letter or a word of {len(word)} "
+                f"You must enter a letter or a word of {len(word)} "
                 "letters - try again"
             )
         elif guess in guessed_letters:
-            print(Fore.RED + "You've already guessed that letter - "
+            print("You've already guessed that letter - "
                   "try another letter")
         else:
-            print(Fore.RED + "Invalid character - try again")
+            print("Invalid character - try again")
         print(display_hangman(lives))
 
     if lives == 0:
-        print(Fore.MAGENTA + f"\nOh no {USER_NAME}, you're out of lives -"
+        print(f"\nOh no {USER_NAME}, you're out of lives -"
               " it is time to hang the man!")
-        print(Fore.MAGENTA + f"Your final score is: {score} - better luck"
+        print(f"Your final score is: {score} - better luck"
               " next time")
         update_scoresheet(USER_NAME, score)
         end_choices()
 
     else:
-        print(Fore.GREEN + f"\nWell done {USER_NAME} for guessing the word"
+        print(f"\nWell done {USER_NAME} for guessing the word"
               f" {word} correctly!")
-        print(Fore.GREEN + f"Your final score is: {score} - good job")
+        print(f"Your final score is: {score} - good job")
         update_scoresheet(USER_NAME, score)
         end_choices()
 
@@ -241,7 +237,7 @@ def end_choices():
             welcome()
             break
         else:
-            print(Fore.RED + "Please only enter number 1, 2 or 3\n")
+            print("Please only enter number 1, 2 or 3\n")
 
 
 def update_scoresheet(USER_NAME, score):
@@ -299,7 +295,7 @@ def scoresheet_options():
                     welcome()
                     break
                 else:
-                    print(Fore.RED + "\nPlease only enter 0 to return home")
+                    print("\nPlease only enter 0 to return home")
         else:
             print("""\nSelect an option below (1 or 2) to continue:
                 1 - Play again
@@ -315,7 +311,7 @@ def scoresheet_options():
                     welcome()
                     break
                 else:
-                    print(Fore.RED + "Please only enter number 1 or 2\n")
+                    print("Please only enter number 1 or 2\n")
 
 
 def main():
