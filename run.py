@@ -40,12 +40,12 @@ def welcome():
     data.
     """
     os.system("clear")
-    print("Welcome to your game of Hangman!")
+    print("Welcome to your game of Countries Hangman!")
     print(stages[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
     2 - Read the rules
-    3 - See the high scores\n""")
+    3 - See the high scores""")
 
     while True:
         menu_options = input("Select an option: ").strip()
@@ -91,7 +91,7 @@ def rules():
     """
     os.system('clear')
     print("""Rules:
-    1.	You have 6 lives to guess the word correctly before the man
+    1.	You have 6 lives to guess the country correctly before the man
     is hanged.
     2.	You will be awarded 10 points for each letter you guess
     correctly.
@@ -101,10 +101,11 @@ def rules():
     where we will say 'Hangman'.
 
     *BONUS POINTS*
-    -   If you guess the whole word correctly, you will be awarded
+    -   If you guess the whole country name correctly, you will be awarded
     a 100 point bonus.
-    -   However, if you guess the word incorrectly, you will lose 50
+    -   However, if you guess the country incorrectly, you will lose 50
     points.
+
     Good luck and enjoy!\n""")
 
     while True:
