@@ -21,8 +21,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman _leaderboard')
 
-data = SHEET.worksheet('scoresheet').get_all_values()
-
 # Resets colorama colours
 init(autoreset=True)
 
@@ -51,13 +49,10 @@ def welcome():
         menu_options = input("Select an option: ").strip()
         if menu_options == "1":
             input_name()
-            break
         elif menu_options == "2":
             rules()
-            break
         elif menu_options == "3":
             display_scoresheet()
-            break
         else:
             print(Fore.RED + "Please only enter number 1, 2 or 3\n")
 
@@ -73,15 +68,12 @@ def input_name():
         USER_NAME = input("Please enter your name: ").capitalize()
         if len(USER_NAME) == 0:
             print(Fore.RED + "You must enter a name to continue")
-            continue
         elif not USER_NAME.isalpha():
             print(Fore.RED + "Your name can only include letters")
-            continue
         else:
             os.system('clear')
             print(f"Let's play Hangman {USER_NAME}!")
             play_game()
-            break
 
 
 def rules():
@@ -112,7 +104,6 @@ def rules():
         return_home = input("Enter 0 to return: ").strip()
         if return_home == "0":
             welcome()
-            break
         else:
             print(Fore.RED + "Please only enter 0 to return home")
 
@@ -233,14 +224,11 @@ def end_choices():
         if end_choice == "1":
             os.system('clear')
             play_game()
-            break
         elif end_choice == "2":
             os.system('clear')
             display_scoresheet()
-            break
         elif end_choice == "3":
             welcome()
-            break
         else:
             print(Fore.RED + "Please only enter number 1, 2 or 3\n")
 
@@ -298,7 +286,6 @@ def scoresheet_options():
                 return_home = input("\nEnter 0 to return: ").strip()
                 if return_home == "0":
                     welcome()
-                    break
                 else:
                     print(Fore.RED + "\nPlease only enter 0 to return home")
         else:
@@ -310,11 +297,9 @@ def scoresheet_options():
                 if scoresheet_choice == "1":
                     os.system('clear')
                     play_game()
-                    break
                 elif scoresheet_choice == "2":
                     os.system('clear')
                     welcome()
-                    break
                 else:
                     print(Fore.RED + "Please only enter number 1 or 2\n")
 
