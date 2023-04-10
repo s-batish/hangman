@@ -36,7 +36,8 @@ def welcome():
     data.
     """
     os.system("clear")
-    print("Welcome to your game of Hangman!\n")
+    print("Welcome to your game of Hangman!")
+    print(stages[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
     2 - Read the rules
