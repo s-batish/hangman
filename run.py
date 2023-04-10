@@ -167,13 +167,13 @@ def play_game():
                 score += correct
             else:
                 lives -= 1
-                print(Fore.MAGENTA + f"{guess} is not in the word")
+                print(Fore.YELLOW + f"{guess} is not in the word")
                 score -= incorrect
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(Fore.RED + f"You've already guessed the word {guess}")
             elif guess != word:
-                print(Fore.MAGENTA + f"{guess} is not the correct word")
+                print(Fore.YELLOW + f"{guess} is not the correct word")
                 lives -= 1
                 score -= 50
                 guessed_words.add(guess)
@@ -193,9 +193,9 @@ def play_game():
         print(display_hangman(lives))
 
     if lives == 0:
-        print(Fore.MAGENTA + f"\nOh no {USER_NAME}, you're out of lives -"
+        print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives -"
               " it is time to hang the man!")
-        print(Fore.MAGENTA + f"Your final score is: {score} - better luck"
+        print(Fore.YELLOW + f"Your final score is: {score} - better luck"
               " next time")
         update_scoresheet(USER_NAME, score)
         end_choices()
