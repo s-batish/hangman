@@ -39,7 +39,7 @@ def welcome():
     data.
     """
     os.system("clear")
-    print(Fore.CYAN + "Welcome to your game of Countries Hangman!")
+    print(Fore.LIGHTYELLOW_EX + "WELCOME TO YOUR GAME OF COUNTRIES HANGMAN!")
     print(Fore.LIGHTMAGENTA_EX + logo[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
