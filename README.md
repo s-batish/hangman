@@ -19,6 +19,24 @@ I made the following flowchart to show the logic of the game from the start to t
 ![Flowchart](docs/hangman_flowchart.png)
 ## Features
 ## Technologies
+- Python
+    - Used to build the functionality of the game
+        - Python Packages:
+            - random: used to generate a random word
+            - os: used to clear the screen
+            - string: used to create a string of only uppercase letters to be used in the game
+            - time: used to create a delay on the screen before showing the next function
+            - gspread: used to connect the game to the Google Sheet
+            - google.oauth2.service_account: used to enable confidential access to the Google Sheet
+            - colorama: used to add colour to the text of the game
+- Gitpod
+    - Used to develop and edit the code
+- Git
+    - Used to add, commit and push the code
+- Heroku
+    - Used to deploy the live site
+- [Diagrams.net](https://app.diagrams.net/)
+    - Used to create the flowchart that was used to plan the game
 ## Testing
 ### Validator Testing
 ### Testing User Stories
