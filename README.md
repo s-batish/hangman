@@ -144,6 +144,38 @@ I used colorama to input the following colours:
 ### Testing User Stories
 ### Manual Testing
 ## Solved Bugs
+- I initally drew the hangman figure incorrectly resulting in it displaying off centre as I realised that you cannot use two ' \ ' as only one ' \ ' displays, leading to the figure being displayed off centre:
+![Initial Hangman figure](docs/bugs/initial_figure_image.png) Initial drawing
+![Initial figure output](docs/bugs/figure_output.png) Initial figure output
+    - I decided to draw the final figure without as many ' \ ' because of this issue and because I though the final result looked better.
+
+        ![Final Hangman figure](docs/bugs/final_figure.png) Final output
+
+- The Scoresheet was initally not updating correctly but this was solved by adding USER_NAME and score as parameters of the function.
+- The screen was not clearing when selecting to play again at the end of the game. This was fixed by moving the clear operation before play_game() instead of after it:
+![Code before](docs/bugs/clear_before.png) Code before
+![Code after](docs/bugs/clear_after.png) Code after
+
+- The high scores were printing in reverse alphabetical order instead of a decreasing numerical order and the scores were printing as strings instead of integers:
+
+    ![Scores before](docs/bugs/scores_before.png) Scores before
+    - This was solved by converting the scores to integers and implementing the following code found on Stack Overflow to print the scores in numerically decreasing order:
+![Scores code](docs/bugs/scores_code.png) Code to print scores
+![Scores after](docs/bugs/scores_after.png) Scores after
+
+- There was an error on the scoresheet when there were not at least 10 scores saved on the Google Sheet. This is because the range for the scores had been set to 10:
+![Scores error](docs/bugs/scores_error.png) Scores error message
+    - This was solved by adding an if/else statement to create a maximum range if there are less than 10 scores saved:
+    ![Solution to the scores error](docs/bugs/scores_error_solution.png) Solution to the scores error
+- The names and scores were initially not aligning the same amount with longer names displaying their scores further to the right:
+
+    ![Misaligned scores](docs/bugs/unaligned_scores.png) Misaligned scores
+    - This was solved by adding an if/else statement to the for loop which adds 2 tabs if the player's name is less than 7 characters, but only 1 tab if the player's name is more than 7 characters:
+    ![Misaligned scores solution code](docs/bugs/misaligned_scores_solution.png) Misaligned scores solution code
+- The coloured pieces of text were not displaying when deployed to Heroku, resulting in this error message:
+
+    ![Colours error](docs/bugs/colours_error.png) Colours error message
+    - This was solved by updating the requirements.txt file so that the colours would deploy correctly.
 ## Deployment
 ### Deploying the Project
 - This game was deployed to Heroku. The steps to do this are as follows:
