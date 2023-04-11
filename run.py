@@ -4,6 +4,7 @@ Main Hangman game file
 import random
 import os
 import string
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 from colorama import Fore, init
@@ -38,8 +39,8 @@ def welcome():
     data.
     """
     os.system("clear")
-    print("Welcome to your game of Countries Hangman!")
-    print(logo[0])
+    print(Fore.CYAN + "Welcome to your game of Countries Hangman!")
+    print(Fore.LIGHTMAGENTA_EX + logo[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
     2 - Read the rules
@@ -195,12 +196,13 @@ def play_game():
         print(display_hangman(lives))
 
     # Displays end message to user depending on whethere they guess the word
-    # correctly or not.
-    # Displays the end_choices() function to show the end of game options to
-    # the user
+    # correctly or not, with a 3s delay before displaying the end_choices()
+    # function to show the end of game options to the user
     if lives == 0:
         print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives -"
               " it is time to hang the man!")
+        time.sleep(3)
+        os.system('clear')
         print(Fore.YELLOW + f"Your final score is: {score} - better luck"
               " next time")
         update_scoresheet(USER_NAME, score)
@@ -209,6 +211,8 @@ def play_game():
     else:
         print(Fore.GREEN + f"\nWell done {USER_NAME} for guessing the word"
               f" {word} correctly!")
+        time.sleep(3)
+        os.system('clear')
         print(Fore.GREEN + f"Your final score is: {score} - good job")
         update_scoresheet(USER_NAME, score)
         end_choices()
