@@ -7,7 +7,7 @@ import string
 import time
 import gspread
 from google.oauth2.service_account import Credentials
-from colorama import Fore, init
+from colorama import Fore, init, Style
 from words import words
 from hangman_lives import stages, logo
 
@@ -39,8 +39,9 @@ def welcome():
     data.
     """
     os.system("clear")
-    print(Fore.LIGHTYELLOW_EX + "WELCOME TO YOUR GAME OF COUNTRIES HANGMAN!")
-    print(Fore.LIGHTMAGENTA_EX + logo[0])
+    print(Style.BRIGHT + Fore.LIGHTYELLOW_EX + "Welcome to your game of"
+          " Countries Hangman!")
+    print(Style.BRIGHT + Fore.LIGHTMAGENTA_EX + logo[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
     2 - Read the rules
