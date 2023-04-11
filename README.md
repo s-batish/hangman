@@ -1,4 +1,8 @@
-# Hangman
+# Countries Hangman
+'Countries Hangman' is a terminal based Python game in which players have to guess letters or words to find out the name of a country before they are out of lives and the man is hanged.
+![Countries Hangman](docs/countries_hangman.png)
+
+View the live site [here](https://hangman-countries.herokuapp.com/)
 ## User Experience
 ### Site Owner's goals
 - To create an entertaining and interactive game of Hangman for user’s to enjoy
