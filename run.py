@@ -41,7 +41,7 @@ def welcome():
     os.system("clear")
     print(Style.BRIGHT + Fore.LIGHTYELLOW_EX + "Welcome to your game of"
           " Countries Hangman!")
-    print(Style.BRIGHT + Fore.LIGHTMAGENTA_EX + logo[0])
+    print(Fore.LIGHTMAGENTA_EX + logo[0])
     print("""Select an option (1, 2 or 3) to continue:
     1 - Play Hangman
     2 - Read the rules
