@@ -28,6 +28,98 @@ I used colorama to input the following colours:
 - The initial welcome message is light yellow and bold to make it stand out as the welcoming title of the game.
 - The hangman logo is light magenta, again to add a bit of colour to the welcome screen and because this colour is close to red so represents the danger.
 ## Features
+### Welcome page
+- This is what the player will be greeted with upon opening the game.
+- There are 3 options for the user to choose from:
+    - Playing the game
+    - Reading the rules
+    - Viewing the high scores
+- Error messages will appear for any invalid inputs.
+<details><summary>Welcome page</summary>
+
+![Welcome page](docs/features/welcome_page.png)
+</details>
+
+### Rules
+- This page explains the rules of the game and how scoring will be calculated, along with an explanation of the bonus points.
+- The user has to enter 0 to return to the home page.
+- Error messages will appear for any invalid inputs.
+<details><summary>Rules page</summary>
+
+![Rules page](docs/features/rules.png)
+</details>
+
+### High scores
+- This page displays the top 10 highest scores.
+- If there are not 10 scores that have been saved yet, this page will display as many scores as there are in the correct descending order.
+- The user has to choose either to play again or return home if they have already played the game (so they would have already inputted a username to allow them to play again).
+- Or, if the user views the high scores page after opening the game (and so would not have inputted a username yet), they have to enter 0 to return home, as if they have not played yet, they would be unable to select an option to play again.
+- Error messages will appear for any invalid inputs.
+<details><summary>High scores page after playing a game</summary>
+
+![High scores page after playing a game](docs/features/high_scores.png)
+</details>
+<details><summary>High scores page without playing a game yet</summary>
+
+![High scores page without playing a game yet](docs/features/high_scores_start_of_game.png)
+</details>
+
+### Play game
+- This is where the main Hangman game is played.
+- The user is greeted with their inputted name and presented with the empty gallows, 0 points and 6 lives.
+- They are shown the blank word as well as what letters they have guessed (which will be updated as they play).
+- They are prompted to input a letter or a word of the number of letters in the randomly selected word.
+<details><summary>Game page</summary>
+
+![Game page](docs/features/start_of_game.png)
+</details>
+
+- The user will receive different messages depending on whether they have guessed the word or letter correctly or not.
+- Their score, lives and the hangman figure will also change during the game depending on whether they have guessed correctly or not.
+<details><summary>Game page - correctly guessed letter</summary>
+
+![Game page - correctly guessed letter](docs/features/correct_letter_guess.png)
+</details>
+
+<details><summary>Game page - correctly guessed word</summary>
+
+![Game page - correctly guessed word](docs/features/correct_word_guess.png)
+</details>
+
+<details><summary>Game page - incorrectly guessed letter</summary>
+
+![Game page - incorrectly guessed letter](docs/features/incorrect_letter_guess.png)
+</details>
+
+<details><summary>Game page - incorrectly guessed word</summary>
+
+![Game page - incorrectly guessed word](docs/features/incorrect_word_guess.png)
+</details>
+
+### End of game section
+- This is what the user will see once they have finished their game.
+- There is a 3 second delay before this page appears so that the user can see the end message before their final score and the end of game options are presented to them.
+- There are 3 options for the user to choose from:
+    - Playing again
+    - Viewing the high scores
+    - Returning to the home page
+- Error messages will appear for any invalid inputs.
+
+<details><summary>End of game page</summary>
+
+![End of game page](docs/features/end_options.png)
+</details>
+
+### Google Sheet
+- This is the Google Sheet that I connected to the game in order to store the high scores
+
+<details><summary>Google Sheet</summary>
+
+![Google Sheet](docs/features/google_sheet.png)
+</details>
+
+### Future Features
+- I think it would be a nice addition to create different levels of the game, for example based on the different lengths of the words, or different regions of countries, and there could be varying points awarded for the different levels.
 ## Technologies
 - Python
     - Used to build the functionality of the game
