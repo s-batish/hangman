@@ -141,6 +141,20 @@ I used colorama to input the following colours:
     - Used to create the flowchart that was used to plan the game
 ## Testing
 ### Validator Testing
+No errors were found when all 3 python pages were passed through the [CI Python Linter](https://pep8ci.herokuapp.com/):
+<details><summary>run.py Validator Testing</summary>
+
+![run.py Validator Testing](docs/testing/run.py_testing.png)
+</details>
+<details><summary>words.py Validator Testing</summary>
+
+![words.py Validator Testing](docs/testing/words.py_testing.png)
+</details>
+<details><summary>hangman_lives.py Validator Testing</summary>
+
+![hangman_lives.py Validator Testing](docs/testing/hangman_lives.py_testing.png)
+</details>
+
 ### Testing User Stories
 ### Manual Testing
 ## Solved Bugs
