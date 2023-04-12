@@ -156,6 +156,20 @@ No errors were found when all 3 python pages were passed through the [CI Python 
 </details>
 
 ### Testing User Stories
+- Expectation: To easily interact with the game
+    - Result: The menu on the welcome page explains what to do and any invalid inputs are met with error messages explaining the problem or what to do
+- Expectation: To play a fun and entertaining game of Hangman
+    - The large list of countries available to guess means that if a player plays the game repeatedly it is not likely that the word will be repeated
+- To have clear instructions explaining the rules of the game
+    - The Rules page, found through the Welcome page, clearly explains how to play the game, how points are awarded or deducted, how lives are lost, and how to gain or lose bonus points
+- To be clearly informed of what any errors are from any invalid inputs
+    - All error messages will appear in red to make them stand out and they contain information stating what the error is and how to fix it
+- To view my score after each game
+    - The scores will be calculated and displayed during the game, and once the game is over the player will be shown their final score
+- To save my high scores to a high scores leaderboard
+    - Scores will automatically be updated to the high scores Google Sheet and the top 10 high scores will be displayed on the High Scores page
+- To have the option to play the game again or quit
+    - At the end of the game the player has the option to play again, to see the high scores or to return to the Home page
 ### Manual Testing
 ## Solved Bugs
 - I initally drew the hangman figure incorrectly resulting in it displaying off centre as I realised that you cannot use two ' \ ' as only one ' \ ' displays, leading to the figure being displayed off centre:
