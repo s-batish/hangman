@@ -200,6 +200,12 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 
 ### High scores page
 
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Enter 0 | Taken back to the Welcome page. | Entered 0. | Taken back to the Welcome page. |
+| Enter an invalid number | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered 10. | Presented with the following error message and instructed to enter 0: [Invalid number](docs/testing/high_scores_number_error.png) |
+| Enter a word | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered the word 'return'. | Presented with the following error message and instructed to enter 0: [Invalid word](docs/testing/high_scores_word_error.png) |
+| Enter without typing anything | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered without typing anything. | Presented with the following error message and instructed to enter 0: [Enter error](docs/testing/high_scores_enter_error.png) |
 
 ## Solved Bugs
 - I initally drew the hangman figure incorrectly resulting in it displaying off centre as I realised that you cannot use two ' \ ' as only one ' \ ' displays, leading to the figure being displayed off centre:
