@@ -176,18 +176,30 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 
 | Feature | Expectation | Action | Result |
 | ---| ---| ---| ---|
-| Select 1 | Instructed to enter name. | Entered 1. | I am instructed to enter my name. [Enter name input](docs/testing/enter_name.png) |
-| Select 1 and then enter a name with only alphabetical characters | Taken to the main game. | Entered 1 and entered the name 'bob'. | I am taken to the main game and greeted with a personalised message including the name 'Bob' (the name has been automatically capitalised). [Personalised welcome message](docs/testing/name_message.png) |
-| Select 2 | Taken to the Rules page. | Entered 2. | I am taken to the Rules page.
-| Select 3 | Taken to the High Scores page. | Entered 3. | I am taken to the High Scores page.
+| Select 1 | Instructed to enter name. | Entered 1. | Instructed to enter my name. [Enter name input](docs/testing/enter_name.png) |
+| Select 1 and then enter a name with only alphabetical characters | Taken to the main game. | Entered 1 and entered the name 'bob'. | Taken to the main game and greeted with a personalised message including the name 'Bob' (the name has been automatically capitalised). [Personalised welcome message](docs/testing/name_message.png) |
+| Select 2 | Taken to the Rules page. | Entered 2. | Taken to the Rules page.
+| Select 3 | Taken to the High Scores page. | Entered 3. | Taken to the High Scores page. |
 
 ####  Welcome page - Inorrect inputs
 
 | Feature | Expectation | Action | Result |
 | ---| ---| ---| ---|
-| Enter an invalid number | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered 4. | I am presented with the following error message and instructed to select an option: [Invalid number](docs/testing/welcome_number_error.png) |
-| Enter a word | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered the word 'yes'. | I am presented with the following error message and instructed to select an option: [Invalid word](docs/testing/welcome_word_error.png) |
-| Enter without typing anything | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered without typing. | I am presented with the following error message and instructed to select an option: [Enter error](docs/testing/welcome_enter_error.png) |
+| Enter an invalid number | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered 4. | Presented with the following error message and instructed to select an option: [Invalid number](docs/testing/welcome_number_error.png) |
+| Enter a word | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered the word 'yes'. | Presented with the following error message and instructed to select an option: [Invalid word](docs/testing/welcome_word_error.png) |
+| Enter without typing anything | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered without typing anything. | Presented with the following error message and instructed to select an option: [Enter error](docs/testing/welcome_enter_error.png) |
+
+####  Rules page
+
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Enter 0 | Taken back to the Welcome page. | Entered 0. | Taken back to the Welcome page. |
+| Enter an invalid number | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered 10. | Presented with the following error message and instructed to enter 0: [Invalid number](docs/testing/rules_number_error.png) |
+| Enter a word | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered the word 'return'. | Presented with the following error message and instructed to enter 0: [Invalid word](docs/testing/rules_word_error.png) |
+| Enter without typing anything | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered without typing anything. | Presented with the following error message and instructed to enter 0: [Enter error](docs/testing/rules_enter_error.png) |
+
+### High scores page
+
 
 ## Solved Bugs
 - I initally drew the hangman figure incorrectly resulting in it displaying off centre as I realised that you cannot use two ' \ ' as only one ' \ ' displays, leading to the figure being displayed off centre:
