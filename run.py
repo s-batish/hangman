@@ -73,8 +73,6 @@ def input_name():
         elif not USER_NAME.isalpha():
             print(Fore.RED + "Your name can only include letters")
         else:
-            os.system('clear')
-            print(f"Let's play Hangman {USER_NAME}!")
             play_game()
 
 
@@ -127,6 +125,8 @@ def play_game():
     guesses decrement the score and number of lives.
     Input validity is checked for each user input.
     """
+    os.system('clear')
+    print(f"Let's play Hangman {USER_NAME}!")
     lives = 6
     score = 0
     correct = 10
