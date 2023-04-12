@@ -307,7 +307,7 @@ def scoresheet_options():
                 if return_home == "0":
                     welcome()
                 else:
-                    print(Fore.RED + "\nPlease only enter 0 to return home")
+                    print(Fore.RED + "Please only enter 0 to return home")
         else:
             print("""\nSelect an option below (1 or 2) to continue:
                 1 - Play again
