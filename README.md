@@ -188,6 +188,8 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 | Enter an invalid number | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered 4. | Presented with the following error message and instructed to select an option: [Invalid number](docs/testing/welcome_number_error.png) |
 | Enter a word | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered the word 'yes'. | Presented with the following error message and instructed to select an option: [Invalid word](docs/testing/welcome_word_error.png) |
 | Enter without typing anything | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered without typing anything. | Presented with the following error message and instructed to select an option: [Enter error](docs/testing/welcome_enter_error.png) |
+| Name input with numbers and symbols | Presented with a red error message to enter a name with just letters and instructed to enter your name again. |Entered the name 'bob123!' | Presented with the following error message and instructed to enter my name again: [Invalid name](docs/testing/welcome_invalid_name.png) |
+| Blank name input | Presented with a red error message stating that you must enter a name to continue and instructed to enter your name again. | Entered without typing anthing. | Presented with the following error message and instructed to enter my name again:[Blank name](docs/testing/welcome_blank_name.png) |
 
 ####  Rules page
 
