@@ -189,7 +189,7 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 | Enter a word | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered the word 'yes'. | Presented with the following error message and instructed to select an option: [Invalid word](docs/testing/welcome_word_error.png) |
 | Enter without typing anything | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered without typing anything. | Presented with the following error message and instructed to select an option: [Enter error](docs/testing/welcome_enter_error.png) |
 | Name input with numbers and symbols | Presented with a red error message to enter a name with just letters and instructed to enter your name again. |Entered the name 'bob123!' | Presented with the following error message and instructed to enter my name again: [Invalid name](docs/testing/welcome_invalid_name.png) |
-| Blank name input | Presented with a red error message stating that you must enter a name to continue and instructed to enter your name again. | Entered without typing anthing. | Presented with the following error message and instructed to enter my name again:[Blank name](docs/testing/welcome_blank_name.png) |
+| Blank name input | Presented with a red error message stating that you must enter a name to continue and instructed to enter your name again. | Entered without typing anthing. | Presented with the following error message and instructed to enter my name again: [Blank name](docs/testing/welcome_blank_name.png) |
 
 ####  Rules page
 
@@ -200,7 +200,7 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 | Enter a word | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered the word 'return'. | Presented with the following error message and instructed to enter 0: [Invalid word](docs/testing/rules_word_error.png) |
 | Enter without typing anything | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered without typing anything. | Presented with the following error message and instructed to enter 0: [Enter error](docs/testing/rules_enter_error.png) |
 
-### High scores page
+#### High scores page
 
 | Feature | Expectation | Action | Result |
 | ---| ---| ---| ---|
@@ -208,6 +208,17 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 | Enter an invalid number | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered 10. | Presented with the following error message and instructed to enter 0: [Invalid number](docs/testing/high_scores_number_error.png) |
 | Enter a word | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered the word 'return'. | Presented with the following error message and instructed to enter 0: [Invalid word](docs/testing/high_scores_word_error.png) |
 | Enter without typing anything | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered without typing anything. | Presented with the following error message and instructed to enter 0: [Enter error](docs/testing/high_scores_enter_error.png) |
+
+#### Main game page - correct inputs
+
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Enter a correct letter | Will receive a personalised green message stating that the letter (which will automatically be written in uppercase) is in the word. Points will increase by 10. Lives and hangman figure will remain unchanged. The guessed letter will be filled into the missing word and added to the guessed letters set. | Entered the letter 'a'. | Received a personalised green message stating that the letter 'A' is in the word. Points increased by 10. Lives and hangman figure are unchanged. The guessed letter has been filled into the missing word and added to the guessed letters set. [Correct letter guess](docs/testing/play_correct_letter.png) |
+| Enter an incorrect letter | Will receive a yellow message stating that the letter (which will automatically be written in uppercase) is in the word. Points will decrease by 5. Lives decrease by 1 and hangman figure will start to appear. The guessed letter will be added to the guessed letters set. | Entered the letter 'q'. | Received a yellow message stating that the letter 'Q' is not in the word. Points decreased by 5 (from 10 points to 5 points). Lives decreased by 1 (from 6 to 5) and the hangman figure has started to appear. [Incorrect letter guess](docs/testing/play_incorrect_letter.png) |
+| Enter an incorrect word of the correct number of letters | Will receive a yellow message stating that the word guessed is not the correct word. Points will decrease by 50. Lives decrease by 1 and hangman figure grows a limb. |Entered the word 'france'. | Received a yellow message stating that the word ' France' was incorrect. Points decreased by 50 (from 5 to -45). Lives decreased by 1 (from 5 to 4) and the hangman figure has grown. [Incorrect word guess](docs/testing/play_incorrect_word.png) |
+| Enter the correct word | Will receive a personalised green message stating the word is correct. There will be a 3s delay before being taken to the end page where it will say the final score, which will have increased by 100 points. | Entered the correct word 'guyana'. | Received a personalised green message stating the word is correct. There was a 3s delay before being taken to the end page where it stated the final score, which will have increased by 100 points (from -45 to 55). [Correct word message](docs/testing/play_correct_word.png) and [Correct word score](docs/testing/play_correct_word_score.png) |
+| Hangman figure growth as lives decrease | For each incorrect guess the hangman figure will grow a new limb and the lives will decrease. | Enter incorrect guesses until the hangman figure is complete and there are no lives left. There will be a 3s delay before being taken to the end page where it will say the final score. | [6 lives left](docs/testing/play_6_lives.png), [5 lives left](docs/testing/play_5_lives.png), [4 lives left](docs/testing/play_4_lives.png), [3 lives left](docs/testing/play_3_lives.png), [2 lives left](docs/testing/play_2_lives.png), [1 life left](docs/testing/play_1_life.png), [0 lives left](docs/testing/play_0_lives.png). There was then a 3s delay before being taken to the end page where it stated the final score. [Incorrect final score](docs/testing/play_correct_word_score.png) |
+
 
 ## Solved Bugs
 - I initally drew the hangman figure incorrectly resulting in it displaying off centre as I realised that you cannot use two ' \ ' as only one ' \ ' displays, leading to the figure being displayed off centre:
