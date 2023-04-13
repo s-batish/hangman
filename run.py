@@ -57,7 +57,6 @@ def welcome():
             display_scoresheet()
         else:
             print(Fore.RED + "Please only enter number 1, 2 or 3\n")
-    os.system('clear')
 
 
 def input_name():
