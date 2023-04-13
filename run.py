@@ -105,7 +105,7 @@ def rules():
         if return_home == "0":
             welcome()
         else:
-            print(Fore.RED + "Please only enter 0 to return home")
+            print(Fore.RED + "Please only enter 0 to return home\n")
 
 
 def get_random_word():
