@@ -53,7 +53,7 @@ I used colorama to input the following colours:
 - This page displays the top 10 highest scores.
 - If there are not 10 scores that have been saved yet, this page will display as many scores as there are in the correct descending order.
 - The user has to choose either to play again or return home if they have already played the game (so they would have already inputted a username to allow them to play again).
-- Or, if the user views the high scores page after opening the game (and so would not have inputted a username yet), they have to enter 0 to return home, as if they have not played yet, they would be unable to select an option to play again.
+- Or, if the user views the high scores page after opening the game (and so would not have inputted a username yet), they have to enter 0 to return home, since, if they have not played yet, they would be unable to select an option to play again.
 - Error messages will appear for any invalid inputs.
 <details><summary>High scores page after playing a game</summary>
 
@@ -200,7 +200,7 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 | Enter a word | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered the word 'return'. | Presented with the following error message and instructed to enter 0: [Invalid word](docs/testing/rules_word_error.png) |
 | Enter without typing anything | Presented with a red error message to only enter 0 and instructed to enter 0. | Entered without typing anything. | Presented with the following error message and instructed to enter 0: [Enter error](docs/testing/rules_enter_error.png) |
 
-#### High scores page
+#### High scores page (start of game - with no username inputted)
 
 | Feature | Expectation | Action | Result |
 | ---| ---| ---| ---|
@@ -229,6 +229,37 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 | Enter a word of the incorrect amount of letters | Will receive a red error message instructing the user to enter a letter or word of the correct number of letters and told to try again. Points, lives and hangman figure were unchanged. | Entered the word 'spain' (the word to guess has 8 letters). | Received the following red error message. Points, lives and hangman figure were unchanged. [Incorrect word length](docs/testing/play_wrong_word_length.png) |
 | Enter an already guessed letter | Will receive a red error message that the letter has already been guessed and instructed to try again. Points, lives and hangman figure were unchanged. | Entered the letter 'a' which had already been guessed. | Received the following red error message. Points, lives and hangman figure were unchanged. [Guessed letter error](docs/testing/play_same_letter.png) |
 | Enter an already guessed word | Will receive a red error message that the word has already been guessed and instructed to try again. Points, lives and hangman figure were unchanged. | Entered 'colombia' which had already been guessed. | Received the following red error message. Points, lives and hangman figure were unchanged. [Guessed word error](docs/testing/play_same_word.png) |
+
+#### End of game page - correct inputs
+
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Select 1 | Taken to the start of the main game page to play again. Different word will be generated to guess. | Entered 1. | Taken to the start of the main game page to play again. Different word generated to guess (previously had a 8 letter word to guess, now have a 5 letter word). |
+| Select 2 | Taken to end of game high scores page (has a different selection of options to when accessing high scores page at start of game when no username has been inputted yet). | Entered 2. | Taken to end of game high scores page. |
+| Select 3 | Taken back to the Welcome page. | Entered 3. | Taken back to the Welcome page. |
+
+#### End of game page - incorrect inputs
+
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Enter an invalid number | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered 4. | Presented with the following error message and instructed to select an option: [Invalid number](docs/testing/end_page_number_error.png) |
+| Enter a word | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered the word 'yes'. | Presented with the following error message and instructed to select an option: [Invalid word](docs/testing/end_page_word_error.png) |
+| Enter without typing anything | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered without typing anything. | Presented with the following error message and instructed to select an option: [Enter error](docs/testing/end_page_enter_error.png) |
+
+#### High scores page (after a username has been inputted) - correct inputs
+
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Enter 1 | Taken to the start of the main game page to play again. Different word will be generated to guess. | Entered 1. | Taken to the start of the main game page to play again. Different word generated to guess (previously had a 5 letter word to guess, now have a 8 letter word). |
+| Enter 2 | Taken back to the Welcome page. | Entered 2. | Taken back to the Welcome page. |
+
+#### High scores page (after a username has been inputted) - incorrect inputs
+
+| Feature | Expectation | Action | Result |
+| ---| ---| ---| ---|
+| Enter an invalid number | Presented with a red error message to only enter the number 1 or 2 and instructed to select an option again. | Entered 3. | Presented with the following error message and instructed to select an option: [Invalid number](docs/testing/high_scores_2_enter_error.png) |
+| Enter a word | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered the word 'yes'. | Presented with the following error message and instructed to select an option: [Invalid word](docs/testing/high_scores_2_word_error.png) |
+| Enter without typing anything | Presented with a red error message to only enter the number 1, 2 or 3 and instructed to select an option again. | Entered without typing anything. | Presented with the following error message and instructed to select an option: [Enter error](docs/testing/high_scores_2_enter_error.png) |
 
 ## Solved Bugs
 - I initally drew the hangman figure incorrectly resulting in it displaying off centre as I realised that you cannot use two ' \ ' as only one ' \ ' displays, leading to the figure being displayed off centre:
