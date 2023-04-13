@@ -144,7 +144,10 @@ def play_game():
         word_list = [
             letter if letter in guessed_letters else "-" for letter in word
         ]
-        print(f"You have {score} points and {lives} lives left")
+        if lives > 1:
+            print(f"You have {score} points and {lives} lives left")
+        else:
+            print(f"You have {score} points and {lives} life left")
         print("Word: ", " ".join(word_list))
         print(
             "You've guessed the following letters: ", " ".join(guessed_letters)
@@ -172,7 +175,8 @@ def play_game():
         # Conditions if user guesses a word with the correct number of letters.
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                print(Fore.RED + f"You've already guessed the word {guess}")
+                print(Fore.RED + f"You've already guessed the word {guess} -"
+                      " try again")
             elif guess != word:
                 print(Fore.YELLOW + f"{guess} is not the correct word")
                 lives -= 1
