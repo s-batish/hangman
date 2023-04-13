@@ -207,7 +207,7 @@ def play_game():
     if lives == 0:
         print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives - it is"
               " time to hang the man!\n")
-        print("...Loading final high score...")
+        print("...Loading final score...")
         time.sleep(3)
         os.system('clear')
         print(Fore.YELLOW + f"Your final score is: {score} ... better luck"
@@ -218,7 +218,7 @@ def play_game():
     else:
         print(Fore.GREEN + f"\nWell done {USER_NAME} for guessing the word"
               f" {word} correctly!")
-        print("...Loading final high score...")
+        print("...Loading final score...")
         time.sleep(3)
         os.system('clear')
         print(Fore.GREEN + f"Your final score is: {score} - good job")
