@@ -57,6 +57,7 @@ def welcome():
             display_scoresheet()
         else:
             print(Fore.RED + "Please only enter number 1, 2 or 3\n")
+    os.system('clear')
 
 
 def input_name():
@@ -204,12 +205,12 @@ def play_game():
     # correctly or not, with a 3s delay before displaying the end_choices()
     # function to show the end of game options to the user
     if lives == 0:
-        print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives -it is"
+        print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives - it is"
               " time to hang the man!\n")
         print("...Loading final high score...")
         time.sleep(3)
         os.system('clear')
-        print(Fore.YELLOW + f"Your final score is: {score} - better luck"
+        print(Fore.YELLOW + f"Your final score is: {score} ... better luck"
               " next time")
         update_scoresheet(USER_NAME, score)
         end_choices()
