@@ -319,7 +319,18 @@ Thorough testing of this game has been undertaken to ensure that the game functi
     - Search for the repository "hangman" and then click "Connect".
     - Scroll to the bottom of the page and either click "Enable Automatic Deploys" in the Automatic deploys section or "Deploy branch" in the Manual deploy section.
 ### Forking the Project
+- Follow the steps below to fork this project,:
+    - Locate the hangman repository: https://github.com/s-batish/hangman
+    - Click the 'Fork' button at the top right of the page.
 ### Cloning the Project
+- Follow the steps below to clone this project:
+    - Locate the hangman repository: https://github.com/s-batish/hangman
+    - Click the green 'Code' button.
+    - Copy the URL for the repository.
+    - Open the repository and open a new terminal.
+    - Change the current directory to the location that you want the cloned directory to be.
+    - Type 'git clone' and paste the copied URL.
+    - Press 'enter' to create the clone.
 ## Credits
 ### Content
 - The list of countries was from [GitHub Gist](https://gist.github.com/kalinchernev/486393efcca01623b18d)

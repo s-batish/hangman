@@ -38,7 +38,7 @@ def welcome():
     The loop will continue to run until user enters valid
     data.
     """
-    os.system("clear")
+    os.system('clear')
     print(Style.BRIGHT + Fore.LIGHTYELLOW_EX + "Welcome to your game of"
           " Countries Hangman!")
     print(Fore.LIGHTMAGENTA_EX + logo[0])
