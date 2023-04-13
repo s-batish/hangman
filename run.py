@@ -204,8 +204,8 @@ def play_game():
     # correctly or not, with a 3s delay before displaying the end_choices()
     # function to show the end of game options to the user
     if lives == 0:
-        print(Fore.YELLOW + f"\nOh no {USER_NAME}, you're out of lives -"
-              " it is time to hang the man!")
+        print(Fore.YELLOW + f"Oh no {USER_NAME}, you're out of lives...")
+        print(Fore.YELLOW + "...it is time to hang the man!")
         time.sleep(3)
         os.system('clear')
         print(Fore.YELLOW + f"Your final score is: {score} - better luck"
