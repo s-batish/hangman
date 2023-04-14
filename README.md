@@ -234,7 +234,7 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 
 | Feature | Expectation | Action | Result |
 | ---| ---| ---| ---|
-| Select 1 | Taken to the start of the main game page to play again. Different word will be generated to guess. | Entered 1. | Taken to the start of the main game page to play again. Different word generated to guess (previously had a 8 letter word to guess, now have a 5 letter word). |
+| Select 1 | Taken to the start of the main game page to play again. Different word will be generated to guess. | Entered 1. | Taken to the start of the main game page to play again. Different word generated to guess (previously had an 8 letter word to guess, now have a 5 letter word). |
 | Select 2 | Taken to end of game high scores page (has a different selection of options to when accessing high scores page at start of game when no username has been inputted yet). | Entered 2. | Taken to end of game high scores page. |
 | Select 3 | Taken back to the Welcome page. | Entered 3. | Taken back to the Welcome page. |
 
@@ -336,7 +336,7 @@ Thorough testing of this game has been undertaken to ensure that the game functi
 ### Content
 - The list of countries was from [GitHub Gist](https://gist.github.com/kalinchernev/486393efcca01623b18d)
 ### Code
-- [Free Code Camp](https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s) and [Kite](https://www.youtube.com/watch?v=HRJRq2r7eL8) were used to help create the play_game() function.
+- [Free Code Camp](https://www.youtube.com/watch?v=8ext9G7xspg&t=1465s) and [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) were used to help create the play_game() function.
 -  [Stack Overflow](https://stackoverflow.com/questions/53570558/python-sorting-a-leaderboard-from-highest-to-lowest-scores-and-top-5-external-f) was used to explain how to sort the leaderboard.
 - [Stack Overflow](https://stackoverflow.com/questions/8270092/remove-all-whitespace-in-a-string) was also used to show how to remove white spaces from inputs.
 - [Geeks for Geeks](https://www.geeksforgeeks.org/clear-screen-python/) was used to explain how to clear the screen.
