@@ -160,15 +160,15 @@ No errors were found when all 3 python pages were passed through the [CI Python 
     - Result: The menu on the welcome page explains what to do and any invalid inputs are met with error messages explaining the problem or what to do
 - Expectation: To play a fun and entertaining game of Hangman
     - Result: The large list of countries available to guess means that if a player plays the game repeatedly it is not likely that the word will be repeated, making the game more engaging and entertaining
-- To have clear instructions explaining the rules of the game
+- Expectation: To have clear instructions explaining the rules of the game
     - Result: The Rules page, found through the Welcome page, clearly explains how to play the game, how points are awarded or deducted, how lives are lost, and how to gain or lose bonus points
-- To be clearly informed of what any errors are from any invalid inputs
+- Expectation: To be clearly informed of what any errors are from any invalid inputs
     - Result: All error messages will appear in red to make them stand out and they contain information stating what the error is and how to fix it
-- To view my score after each game
+- Expectation: To view my score after each game
     - Result: The scores will be calculated and displayed during the game, and once the game is over the player will be shown their final score
-- To save my high scores to a high scores leaderboard
+- Expectation: To save my high scores to a high scores leaderboard
     - Result: Scores will automatically be updated to the high scores Google Sheet and the top 10 high scores will be displayed on the High Scores page
-- To have the option to play the game again or quit
+- Expectation: To have the option to play the game again or quit
     - Result: At the end of the game the player has the option to play again, to see the high scores or to return to the Home page
 ### Manual Testing
 Thorough testing of this game has been undertaken to ensure that the game functions as expected and that any invalid user inputs or errors have been handled correctly.
